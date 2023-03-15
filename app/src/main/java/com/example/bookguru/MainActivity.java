@@ -26,6 +26,12 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(in);
             }
         });
+        ManageBooks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent in = new Intent(MainActivity.this, ManageBooks.class);
+                startActivity(in);
+            }
+        });
     }
 }
-

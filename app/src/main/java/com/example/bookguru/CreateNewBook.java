@@ -21,7 +21,7 @@ public class CreateNewBook extends AppCompatActivity {
     private static Button btnQuery;
     private static EditText book, auth, pub, date;
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.0.107/ancuin/InsertTrans.php";
+    private static String urlHost = "http://192.168.0.107/bookguru/InsertTrans.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String bookname = "";
@@ -75,7 +75,7 @@ public class CreateNewBook extends AppCompatActivity {
             int nSuccess;
             try {
                 ContentValues cv = new ContentValues();
-                cPostSQL = " '" + bookname + "' , '" + author + "' , '" + publisher + "' " + dateofpub + "' ";
+                cPostSQL = " '" + bookname + "' , '" + author + "' , '" + publisher + "' , '" + dateofpub + "'  ";
                 cv.put("code", cPostSQL);
 
                 JSONObject json = jParser.makeHTTPRequest(urlHost, "POST", cv);

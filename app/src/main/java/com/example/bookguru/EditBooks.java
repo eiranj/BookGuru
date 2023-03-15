@@ -9,13 +9,9 @@ import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -25,11 +21,11 @@ import org.json.JSONObject;
 
 public class EditBooks extends AppCompatActivity {
     private static Button btnQuery;
-    private static EditText book, names, auth, pub, date;
+    private static EditText book, auth, pub, date;
     private static TextView tv_civ;
     private static String cItemcode = "";
     private static JSONParser jParser = new JSONParser();
-    private static String urlHost = "http://192.168.0.107/ancuin/UpdateQty.php";
+    private static String urlHost = "http://192.168.0.107/bookguru/UpdateQty.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
 
@@ -66,7 +62,10 @@ public class EditBooks extends AppCompatActivity {
         pubs = i.getStringExtra(PUBLISHER);
         dates = i.getStringExtra(DATE);
         aydi = i.getStringExtra(ID);
-        names.setText(bks);
+        book.setText(bks);
+        auth.setText(authr);
+        pub.setText(pubs);
+        date.setText(dates);
 
         btnQuery.setOnClickListener(new View.OnClickListener() {
             @Override

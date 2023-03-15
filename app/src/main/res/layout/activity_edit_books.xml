@@ -10,7 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="24dp"
-        android:text="Create"
+        android:text="EDIT"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.459"
@@ -82,7 +82,7 @@
         app:layout_constraintVertical_bias="0.268" />
 
     <EditText
-        android:id="@+id/publisher"
+        android:id="@+id/date"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:ems="10"
@@ -106,7 +106,7 @@
         app:layout_constraintVertical_bias="0.405" />
 
     <EditText
-        android:id="@+id/date"
+        android:id="@+id/publisher"
         android:layout_width="350dp"
         android:layout_height="45dp"
         android:ems="10"

@@ -16,12 +16,12 @@ public class ManageBooks extends AppCompatActivity {
     TextView textView, txtbook, txtDefault_author, txtDefault_publisher, txtDefault_date, txtDefault_ID;
     private static EditText editbook;
     private static JSONParser jParser = new JSONParser();
-    private static String urlHostBook = "http://192.168.0.107/ancuin/SelectItemDetails.php";
-    private static String urlHostDelete = "http://192.168.0.107/ancuin/delete.php";
-    private static String urlHostAuthor = "http://192.168.0.107/ancuin/selectGender.php";
-    private static String urlHostPublisher = "http://192.168.0.107/ancuin/selectCivilStatus.php";
-    private static String urlHostDate = "http://192.168.0.107/ancuin/selectCivilStatus.php";
-    private static String urlHostID = "http://192.168.0.107/ancuin/selectId.php";
+    private static String urlHostBook = "http://192.168.0.107/bookguru/selectBookTitle.php";
+    private static String urlHostDelete = "http://192.168.0.107/bookguru/delete.php";
+    private static String urlHostAuthor = "http://192.168.0.107/bookguru/selectAuthor.php";
+    private static String urlHostPublisher = "http://192.168.0.107/bookguru/selectPublisher.php";
+    private static String urlHostDate = "http://192.168.0.107/bookguru/SelectDate.php";
+    private static String urlHostID = "http://192.168.0.107/bookguru/selectId.php";
     private static String TAG_MESSAGE = "message", TAG_SUCCESS = "success";
     private static String online_dataset = "";
     private static String cItemcode = "";
@@ -143,8 +143,16 @@ public class ManageBooks extends AppCompatActivity {
                 alert_confirm.setPositiveButton(R.string.msg2, new DialogInterface.OnClickListener() {
                     @Override
                     public void onClick(DialogInterface dialogInterface, int i) {
+                        txtbook.setText(cItemSelected);
+                        txtDefault_author.setText(cItemSelected_author);
+                        txtDefault_publisher.setText(cItemSelected_publisher);
+                        txtDefault_date.setText(cItemSelected_date);
                         txtDefault_ID.setText(cItemSelected_ID);
 
+                        bks = txtbook.getText().toString().trim();
+                        auth = txtDefault_author.getText().toString().trim();
+                        pub = txtDefault_publisher.getText().toString().trim();
+                        date = txtDefault_date.getText().toString().trim();
                         aydi = txtDefault_ID.getText().toString().trim();
                         new delete().execute();
                     }
